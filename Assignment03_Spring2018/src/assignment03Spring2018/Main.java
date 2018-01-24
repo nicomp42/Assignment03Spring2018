@@ -32,8 +32,12 @@ public class Main {
 		//Expected: true
 		BigIntPrime test4 = new BigIntPrime();
 		boolean result4 = test4.isPrime(BigInteger.valueOf(179426549));
+		//Check whether 1000000000000000000 is prime
+		//Expected: false
+		BigIntPrime test5 = new BigIntPrime();
+		boolean result5 = test5.isPrime(BigInteger.valueOf(1000000000000000000L));
 		//Check if all the test cases turn out as expected.
-		if(result1==false && result2==true && result3== false && result4==true)
+		if(result1==false && result2==true && result3== false && result4==true && result5==false)
 		{
 			//If it is print out a message saying so
 			System.out.println("Your program works!!");
