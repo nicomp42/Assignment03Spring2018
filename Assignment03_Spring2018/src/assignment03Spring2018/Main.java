@@ -4,7 +4,7 @@
  * Course #, and section: Course 2045, Section 1
  * Due date: 1/30/2018
  * Description: This is a program that checks whether a BigInt is prime
- * Citations: 
+ * Citations: BigPrime.net
  * Anything else:
  */
 
