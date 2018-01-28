@@ -29,7 +29,7 @@ public class Main {
 		boolean result2 = test2.isPrime(BigInteger.valueOf(2));
 		if(result2==true) {System.out.println("2 is prime");}
 		else {System.out.println("2 is not prime");}
-		//Test whether 7700000070077 is prime
+		//Test whether 7700000070077 is prime 
 		//Expected: False
 		BigIntPrime test3 = new BigIntPrime();
 		boolean result3 = test3.isPrime(BigInteger.valueOf(7700000070077L));

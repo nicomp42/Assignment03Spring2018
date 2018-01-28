@@ -2,7 +2,7 @@ package assignment03Spring2018;
 
 import java.math.BigInteger;
 
-public class BigIntPrime {
+public class BigIntPrime { 
 	public boolean isPrime(BigInteger number)
 	{
 		boolean result = true;// Assume number is prime until we prove otherwise 
