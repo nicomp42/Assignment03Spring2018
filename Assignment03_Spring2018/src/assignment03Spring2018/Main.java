@@ -16,48 +16,55 @@ public class Main {
 
 	public static void main(String[] args) {
 		//Construct an object of type BigIntPrime
-		//Test whether 1 is prime
-		//Expected: false
-		BigIntPrime test1 = new BigIntPrime();
-		boolean result1 = test1.isPrime(BigInteger.valueOf(1));
-		//Print out the results
-		if(result1==true) {System.out.println("1 is prime");}
-		else {System.out.println("1 is not prime");}
-		//Test whether 2 is prime
-		//Expected: true
-		BigIntPrime test2 = new BigIntPrime();
-		boolean result2 = test2.isPrime(BigInteger.valueOf(2));
-		if(result2==true) {System.out.println("2 is prime");}
-		else {System.out.println("2 is not prime");}
-		//Test whether 7700000070077 is prime 
-		//Expected: False
-		BigIntPrime test3 = new BigIntPrime();
-		boolean result3 = test3.isPrime(BigInteger.valueOf(7700000070077L));
-		if(result3==true) {System.out.println("7700000070077 is prime");}
-		else {System.out.println("7700000070077 is not prime");}
-		//Test whether 179426549 is prime
-		//Expected: true
-		BigIntPrime test4 = new BigIntPrime();
-		boolean result4 = test4.isPrime(BigInteger.valueOf(179426549));
-		if(result4==true) {System.out.println("179426549 is prime");}
-		else {System.out.println("179426549 is not prime");}
-		//Check whether 1000000000000000000 is prime
-		//Expected: false
-		BigIntPrime test5 = new BigIntPrime();
-		boolean result5 = test5.isPrime(BigInteger.valueOf(1000000000000000000L));
-		if(result5==true) {System.out.println("1000000000000000000 is prime");}
-		else { System.out.println("1000000000000000000 is not prime");}
-		//Check if all the test cases turn out as expected.				
-		if(result1==false && result2==true && result3== false && result4==true && result5==false)
+		BigIntPrime test = new BigIntPrime();
+		//Create an array of prime numbers
+		BigInteger[] primeNums = new BigInteger[3];
+		primeNums[0] = BigInteger.valueOf(2);
+		primeNums[1] = BigInteger.valueOf(179426549);
+		primeNums[2] = BigInteger.valueOf(-17); //Add in a negative number
+		boolean error = false;
+		//Write a loop that tests whether each element in the array is prime
+		for(int i = 0; i < primeNums.length; i ++)
 		{
-		//If it is print out a message saying so
-		System.out.println("Your program works!!");
+			boolean result = test.isPrime(primeNums[i]);
+			//If it isnt stop the loop
+			if(result = false)
+			{
+				error = true;
+				break;
+			}
 		}
-		else
+		//If one of the numbers that is prime reads that it is not prime, print out a statement saying that something's wrong
+		if(error == true)
 		{
-			//If not say the program doesnt work
-			System.out.println("Your program doesnt work...");
+			System.out.println("Something is wrong with your program!");
 		}
+		BigInteger[] NonPrimeNums = new BigInteger[3];
+		NonPrimeNums[0] = BigInteger.valueOf(1);
+		NonPrimeNums[1] = BigInteger.valueOf(7700000070077L);
+		NonPrimeNums[2] = BigInteger.valueOf(1000000000000000000L); 
+		boolean errorNonPrime = false;
+		//Write a loop that tests whether each element in the array is prime
+		for(int i = 0; i < NonPrimeNums.length; i ++)
+		{
+			boolean resultNonPrimes = test.isPrime(NonPrimeNums[i]);
+			//If it isnt stop the loop
+			if(resultNonPrimes == true)
+			{
+				errorNonPrime = true;
+				break;
+			}
+		}
+		//If one of the numbers that is not prime reads that it is prime, print out a statement saying that something's wrong
+		if(errorNonPrime == true)
+		{
+			System.out.println("There is something wrong with your program!");
+		}
+		if(error == false && errorNonPrime == false)
+		{
+			System.out.println("Your program works!!");
+		}
+		
 	}
 
 }
